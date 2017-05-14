@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+#header {
+    margin: 0; 
+    border-radius: 0;
+}
+.wrapper {
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+}
+.div-2 {
+	height: 600px;
+}
+#trip-list {
+	overflow: auto;
+	display: block;
+	width: auto;
+}
+#chart {
+	width: 50%;
+}
+.plain, #trip-list tbody tr {
+	pointer-events: none;
+}
+.plain > a {
+	color: black;
+}
+.dropdown {
+	width: 130px;
+}

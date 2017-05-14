@@ -1,0 +1,91 @@
+body {
+	margin: 0;
+	font-size: 20px;
+	font-family: Alegreya;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+h3 {
+	text-align: center;
+	font-weight: bold;
+	padding: 10px 0;
+}
+img {
+	margin: 20px auto;
+}
+a {
+	text-decoration: none !important;
+}
+.highcharts-background {
+	fill: rgba(0,0,0,0);
+}
+.navbar-brand {
+	font-size: 26px;
+}
+#header {
+	width: 100%;
+	margin: 0;
+	border-radius: 0;
+	position: fixed;
+	z-index: 100;
+}
+.container {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
+.odd {
+	background-color: #fff;
+}
+.even {
+	background-color: #eee;
+}
+.title-container {
+	box-sizing: border-box;
+	background-image: url("images/bg.jpg");
+	background-color: #888;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.title {
+	box-sizing: border-box;
+	padding-top: 100px;
+	height: 300px;
+}
+.title h1 {
+	margin: 0;
+	padding: 0;
+	line-height: 100px;
+	font-size: 40px;
+	font-weight: 100;
+	text-align: center;
+}
+.glyphicon {
+	background-color: rgba(0,0,0,0);
+	font-size: 35px;
+}
+.thumbnail {
+	border: 1px solid black;
+	background-color: white;
+	transition: all ease-in-out 0.2s;
+}
+.thumbnail:hover {
+	border: 1px solid rgb(112,179,239);
+	background-color: #eee;
+}
+.row {
+	padding: 50px;
+}
+.description {
+	padding: 50px 50px 00px 50px;
+}
+.chart {
+	padding: 20px 50px 50px 50px;
+	height: 400px;
+}
+#no-chart {
+	height: 0px;
+}

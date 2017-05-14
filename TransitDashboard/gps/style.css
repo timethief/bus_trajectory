@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.div-2 {
+	width: 50%;
+	float: left;
+	padding: 10px;
+	box-sizing: border-box;
+}
+.not-showing {
+	visibility: hidden;
+	pointer-events: none;
+}
+.sel-wrapper {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+#header, .breadcrumb, ol, #trip-list {
+    margin: 0; 
+    border-radius: 0;
+}
+#sel-label {
+	min-width: 100px;
+}
+
+form, .breadcrumb > li {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+}
+.breadcrumb, form {
+	border-bottom: 1px solid #ddd;
+}
+.breadcrumb > li > p {
+	display: inline-block;
+	margin: 0;
+	margin-right: 5px;
+}
+.breadcrumb ol > li {
+	display: block !important;
+	margin: 0 auto;
+}
+form {
+	width: 100%;
+	height: 46px;
+	padding: 8px auto;
+	background-color: rgb(245,245,245);
+	color: rgb(119,119,119);
+}
+form label {
+	font-weight: normal;
+	margin: 0;
+	line-height: 30px;
+	padding-right: 5px;
+}
+form .form-group {
+	padding: 0 10px;
+}
+input {
+	max-width: 150px !important;
+}
+
+.pagination {
+	margin: 0;
+	cursor: pointer;
+}
+.pagination .glyphicon {
+	top: 0;
+}
+
+.popover {
+	max-width: 400px;
+	max-height: 300px;
+}
+.popover-wrapper {
+	width: 300px;
+	padding: 10px;
+}
+button.time-range-btn {
+	width: 100px;
+}
+
+#trip-list table, #trip-detail table {
+	width: 100%;
+	table-layout: fixed;
+}
+#trip-list thead, #trip-list tbody, #trip-list tr,
+#trip-detail thead, #trip-detail tbody, #trip-detail tr {
+	display: block;
+}
+#trip-list td, #trip-list th,
+#trip-detail td, #trip-detail th {
+	display: inline-block;
+	text-align: center;
+}
+#trip-list tbody,
+#trip-detail tbody {
+	overflow: auto;
+}
+#trip-list td, #trip-list th {
+	width: 12.5%;
+}
+#trip-detail td, #trip-detail th {
+	width: 25%;
+}
+#trip-list tbody tr, li[role='presentation'] {
+	cursor: pointer; 
+}
+
+.content {
+	width: 100%;
+	border: 1px solid #ddd;
+	border-top: none;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+.map, .analysis {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+.analysis > div {
+	display: block;
+	padding: 20px;
+}
+
+.empty {
+	background-image: url('empty.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}

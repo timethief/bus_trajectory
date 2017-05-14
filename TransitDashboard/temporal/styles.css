@@ -1,0 +1,123 @@
+body {
+	margin: 0 auto;
+	font-size: 20px;
+	padding-top: 0;
+	font-family: Alegreya;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.navbar-brand {
+	font-size: 26px;
+}
+
+select {
+	outline: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+#header {
+	margin: 0;
+	border-radius: 0;
+}
+
+#instruction {
+	display: block;
+}
+#instruction p {
+	font-size: 20px;
+}
+
+.div-3 {
+	width: 25%;
+	float: left;
+}
+
+.div-4 {
+	width: 100%;
+	float: left;
+	padding: 20px;
+	opacity: 0.0;
+	box-sizing: border-box;
+	transition: opacity 0.5s cubic-bezier(0.4, 0.0, 0.2, 1), height 0s;
+}
+
+.b-left {
+	border-top: 1px solid gray;
+}
+.b-top {
+	border-top: 1px solid gray;
+}
+
+@media (min-width: 766px) {
+.div-4 {
+	width: 50%;
+}
+.b-left {
+	border-top: none;
+	border-left: 1px solid gray;
+}
+.b-top {
+	border-top: 1px solid gray;
+}
+}
+
+.div-4 h1 {
+	font-size: 26px;
+	font-weight: normal;
+	margin: 0;
+	padding: 11px;
+	text-align: center;
+	color: #444;
+}
+
+.div-4 h2 {
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: normal;
+	margin: 0;
+	padding: 9px;
+	text-align: center;
+	color: #999;
+}
+
+.interactive {
+	height: 20px;
+	display: block;
+	margin: 50px auto;
+	box-sizing: border-box;
+}
+
+.interactive p, label {
+	font-size: 20px;
+	line-height: 24px;
+	float: left;
+	padding-top: 4px;
+	padding-right: 10px;
+	margin: 0;
+}
+
+.interactive p {
+	width: 25%;
+}
+
+.interactive label {
+	padding-left: 10px;
+}
+
+.interactive input {
+	float: left;
+}
+
+.drop-down {
+	float: left;
+	width: 70%;
+}
+
+.clear {
+	clear: all;
+}

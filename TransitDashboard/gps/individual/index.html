@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+	<title>GPS Analysis</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/data.js"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?
+		key=AIzaSyB-v2A9aTvtRzQrlg-Tih-xCQcKzZFByA0
+		"></script>
+	<script src="../plugin/maplabel.js"></script>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<script src="../plugin/ion.rangeSlider.min.js"></script>
+	<link rel="stylesheet" href="../plugin/ion.rangeSlider.normalize.css">
+	<link rel="stylesheet" href="../plugin/ion.rangeSlider.css">
+	<link rel="stylesheet" href="../plugin/ion.rangeSlider.skinFlat.css">
+	
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.min.css" />
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" />
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
+
+	<script src="script.js"></script>
+	<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+	<nav class="navbar navbar-inverse" id="header">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" style="color: white" href=".." id='title'>Loading data...</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active"><a>Individual</a></li>
+				<li><a href="../splitting">Trip Splitting</a></li>
+				<li><a href="../matching">Deviation Anlaysis</a></li>
+			</ul>
+		</div>
+	</nav>
+	<div class="div-2 not-showing">
+		<div class="sel-wrapper">
+			<ol class="breadcrumb"> 
+				<li class="active" align="center">
+					<p>Select a trip: </p>
+					<ul class="pagination pagination-sm">
+						<li id="sel-prev-btn"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></li>
+						<li class="disabled" id="sel-label"><a>no selection</a></li>
+						<li id="sel-next-btn"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></li>
+					</ul>
+				</li>
+			</ol>
+			<form class="form-inline">
+				<div class="col-xs-1 form-group form-group-sm">
+					<label><span class="glyphicon glyphicon-filter" aria-hidden="true"></span></label>
+				</div>
+				<div class="col-xs-4 form-group form-group-sm">
+					<label for="date-picker">Date</label>
+					<input type="text" class="form-control datepicker" id="date-picker" placeholder="yyyy.mm.dd">
+				</div>
+				<div class="col-xs-3 form-group form-group-sm">
+					<label for="time-slider">Time</label>
+					<button type="button" class="btn btn-default btn-sm time-range-btn" data-toggle="popover">0:00-24:00</button>
+				</div>
+				<div class="col-xs-4 form-group form-group-sm">
+					<label for="data-count-constraint">Data Count</label>
+					<div class="input-group input-group-sm" style="max-width: 120px">
+						<div class="input-group-addon">≥</div>
+						<input type="text" class="form-control" id="data-count-constraint" placeholder="0">
+						<div class="input-group-addon">rows</div>
+					</div>
+				</div>
+			</form>	
+			<div class="trip-list-wrapper">
+				<div class="trip-list-body">
+					<table class="table table-hover table-condensed" id="trip-list">
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="div-2 not-showing">
+		<ul class="nav nav-tabs nav-justified">
+			<li role="presentation" class="active" for='raw-data'><a>Raw Data</a></li>
+			<li role="presentation" for='map'><a>Map</a></li>
+			<li role="presentation" for='analysis'><a>Analysis</a></li>
+		</ul>
+		<div class="content empty">
+			<div class='raw-data'>
+				<table class="table table-hover" id="trip-detail"></table>
+			</div>
+			<div class="map" id="trip-map"></div>
+			<div class='analysis'>
+				<div id="chart-cum"></div>
+				<div id="chart-seq"></div>
+			</div>
+		</div>
+	</div>
+</body>

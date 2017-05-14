@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+	<title>GTFS Analysis</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/data.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<nav class="navbar navbar-inverse" id="header">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" style="color: white" href=".." id='title'>Loading data...</a>
+			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="../individual">Individual</a></li>
+				<li class="active"><a>Group</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="wrapper" align=center>
+		<ul class="nav nav-pills" role="tablist"> 
+			<li class="plain"><a><b>Filters</b></a></li> 
+			<li class="plain"><a>Service Type</a></li> 
+			<li role="presentation" class="dropdown"> 
+				<a href="#" class="dropdown-toggle" id="drop4" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> All <span class="caret"></span> </a> 
+				<ul class="dropdown-menu" id="menu1" aria-labelledby="drop4"> 
+					<li class="active"><a href="#">All</a></li> 
+					<li role="separator" class="divider"></li> 
+					<li><a href="#">Weekday</a></li> 
+					<li><a href="#">Saturday</a></li> 
+					<li><a href="#">Sunday</a></li> 
+				</ul> 
+			</li> 
+			<li class="plain"><a>Direction</a></li> 
+			<li role="presentation" class="dropdown"> 
+				<a href="#" class="dropdown-toggle" id="drop5" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> All <span class="caret"></span> </a> 
+				<ul class="dropdown-menu" id="menu2" aria-labelledby="drop5"> 
+					<li class="active"><a href="#">All</a></li> 
+					<li role="separator" class="divider"></li> 
+					<li><a href="#">0</a></li> 
+					<li><a href="#">1</a></li> 
+				</ul> 
+			</li> 
+			<li class="plain"><a>Time Range</a></li>
+			<li role="presentation" class="dropdown"> 
+				<a href="#" class="dropdown-toggle" id="drop6" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> All <span class="caret"></span> </a> 
+				<ul class="dropdown-menu" id="menu3" aria-labelledby="drop6"> 
+					<li class="active"><a href="#">All</a></li> 
+					<li role="separator" class="divider"></li> 
+					<li><a href="#">4:00-7:00</a></li> 
+					<li><a href="#">7:00-10:00</a></li>
+					<li><a href="#">10:00-13:00</a></li> 
+					<li><a href="#">13:00-16:00</a></li> 
+					<li><a href="#">16:00-19:00</a></li> 
+					<li><a href="#">19:00-22:00</a></li> 
+					<li><a href="#">22:00-28:00</a></li> 
+				</ul> 
+			</li> 
+		</ul>
+	</div>
+
+	<div class="wrapper">
+		<table class="div-2 table table-hover" id="trip-list"></table>
+		<div class="div-2" id='chart'></div>
+	</div>
+</body>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+	<title>GTFS Analysis</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/data.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="script.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?
+		key=AIzaSyB-v2A9aTvtRzQrlg-Tih-xCQcKzZFByA0
+		" async defer></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<nav class="navbar navbar-inverse" id="header">
+				<div class="container-fluid">
+						<div class="navbar-header">
+								<a class="navbar-brand" style="color: white" href=".." id='title'>Loading data...</a>
+						</div>
+						<ul class="nav navbar-nav navbar-right">
+								<li class="active"><a>Individual</a></li>
+								<li><a href="../group">Group</a></li>
+						</ul>
+				</div>
+		</nav>
+		<ol class="breadcrumb"> 
+				<li class="active" align="center">
+					<p>Select a trip: </p>
+					<ul class="pagination pagination-sm">
+						<li id="sel-prev-btn"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></li>
+						<li><a data-toggle="modal" data-target="#sel-trip" id='sel-trip-btn'>no selection</a></li>
+						<li id="sel-next-btn"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></li>
+					</ul>
+				</li>
+		</ol>
+		<div class="modal fade" id="sel-trip" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="myModalLabel" align=center>Select Trip</h4>
+					</div>
+					<div class="modal-body">
+						<table class="table table-hover table-condensed" id="trip_list">
+						</table>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+						<button type="button" class="btn btn-primary" id="set-trip-btn">Select</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="content-wrapper">
+			<ul class="nav nav-tabs nav-justified">
+				<li role="presentation" class="active" id="raw-data-btn"><a>Raw Data</a></li>
+				<li role="presentation" id="analysis-btn"><a>Analysis</a></li>
+			</ul>
+			<div class="content">
+				<div class='raw-data'>
+					<div class='div-2'>
+						<table class="table table-hover table-condensed" id="trip-detail"></table>
+					</div>
+					<div class='div-2' id="map">
+					</div>
+				</div>
+				<div style="clear: both"></div>
+				<div class='analysis'>
+					<div id="chart-cum"></div>
+				</div>
+			</div>
+		</div>
+</body>

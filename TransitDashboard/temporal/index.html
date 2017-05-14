@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+<head>
+	<title>Compare Lines - How On Time Are LA Buses?</title>
+	<meta charset="utf-8">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Alegreya:400,700" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../logo-style.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+	<!-- Embed Google Analytics -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-94084189-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+</head>
+<body onload="getFiles();" onresize="setStyles();">
+	<nav class="navbar navbar-default" id="header">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            	<a href="http://crosstowntraffic.uscannenbergmedia.com/" class="navbar-brand" style="z-index: 100; padding: 5px 10px;" id="logo-btn">
+    				<img src="../logo.png" style="height: 40px; margin: 0;">
+    			</a>
+				<a class="navbar-brand" id="logo-tooltip"><span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true" style="position: relative; top: 2px;"></span>Back to the article</a>
+                <a class="navbar-brand" id="title-text" href="../">Loading data...</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="../other/">Late Lines</a></li>
+                <li class="active"><a>Compare Lines</a></li>
+                <li><a href="../heatmap/">Heatmap</a></li>
+                <li><a href="../stops/">Late Stops</a></li>
+                <li><a href="../filter/">Filter Method</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="modal fade" tabindex="-1" role="dialog" id="instruction">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <p>Play with the data to see how well different bus lines stay on schedule. You can compare the performance of two lines at the same time.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+	<div class="div-4">
+		<div class="interactive">
+			<p>Choose a line:</p>
+			<select class="drop-down" onchange="updateAll();"></select>
+			<br>
+		</div>
+		<div class="interactive">
+			<p>Choose a line:</p>
+			<select class="drop-down" onchange="updateAll();"></select>
+			<br>
+		</div>
+		<!-- <div class="interactive">
+			<p>Route id 3:</p>
+			<select class="drop-down" onchange="updateAll();"></select>
+			<br>
+		</div>
+		<div class="interactive">
+			<p>Route id 4:</p>
+			<select class="drop-down" onchange="updateAll();"></select>
+			<br>
+		</div>
+		<div class="interactive">
+			<p>Route id 5:</p>
+			<select class="drop-down" onchange="updateAll();"></select>
+			<br>
+		</div> -->
+	</div>
+	<div class="div-4 b-left" id="hour"></div>
+	<div class="div-4 b-top" id="week"></div>
+	<div class="div-4 b-left b-top" id="month"></div>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('[rel="tooltip"]').tooltip();
+			$('#instruction').modal('show');
+		});
+	</script>
+</body>
+</html>

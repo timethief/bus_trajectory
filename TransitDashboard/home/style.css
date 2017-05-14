@@ -1,0 +1,166 @@
+body {
+	margin: 0;
+	font-size: 20px;
+	font-family: Alegreya;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+h3 {
+	text-align: center;
+}
+img {
+	margin: 20px auto;
+}
+a {
+	cursor: pointer;
+}
+#instruction {
+	display: block;
+}
+#instruction p {
+	color: black;
+	font-size: 20px;
+}
+.highcharts-background {
+	fill: rgba(0,0,0,0);
+}
+.navbar {
+	border: 0;
+}
+.navbar-brand {
+	font-size: 26px;
+}
+
+/* navbar */
+.navbar.white {
+	background: none;
+	-webkit-transition: background-color 0.2s;
+	-o-transition: background-color 0.2s;
+	transition: background-color 0.2s;
+}
+.navbar.white a.navbar-brand,
+.navbar.white .navbar-brand:focus,
+.navbar.white .navbar-brand:hover,
+.navbar.white .navbar-nav > li > a,
+.navbar.white .navbar-nav > li > a:hover,
+.navbar.white .navbar-nav > li > a:focus {
+	color: #fff;
+}
+.navbar.white img {
+	-webkit-filter: drop-shadow(1px 1px 0 white)
+        			drop-shadow(-1px -1px 0 white)
+        			drop-shadow(-1px 1px 0 white)
+        			drop-shadow(1px -1px 0 white);
+	filter: drop-shadow(1px 1px 0 white) 
+    		drop-shadow(-1px -1px 0 white)
+    		drop-shadow(-1px 1px 0 white)
+        	drop-shadow(1px -1px 0 white);
+}
+/* navbar ends */
+
+#header {
+	width: 100%;
+	margin: 0;
+	border-radius: 0;
+	position: fixed;
+	z-index: 100;
+}
+.container {
+	margin: 0 auto;
+	padding: 0;
+	width: 100%;
+}
+.odd {
+	background-color: #fff;
+}
+.even {
+	background-color: #eee;
+}
+#spacer {
+	width: 100%;
+}
+.title {
+	box-sizing: border-box;
+	padding: 100px;
+	width: 100vw;
+	height: 400px;
+	font-size: 18px;
+	text-align: center;
+	color: white;
+	background: #0065B3;
+	background: -webkit-radial-gradient(bottom, #0096D6 12%, #00328F);
+	background: radial-gradient(at bottom, #0096D6 12%, #00328F);
+	display: table;
+}
+.title-child {
+	display: table-cell;
+	vertical-align: middle;
+}
+h3 {
+    font-size: 32px;
+    text-align: center;
+    line-height: 50px;
+}
+#exp {
+    text-align: center;
+}
+.subtitle {
+    text-align: center;
+    font-weight: bold;
+}
+.facts {
+	height: 400px;
+	box-sizing: border-box;
+	padding: 50px;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+}
+.facts-child {
+	width: 100%;
+	position: relative;
+}
+@media(min-width: 768px) {
+.facts-child {	
+	width: 50%;
+	left: 25%;
+}
+#spacer {
+	display: none;
+}
+}
+
+.pagination {
+	padding-top: 5px;
+}
+.row {
+	padding: 30px;
+}
+.chart {
+	padding: 50px;
+	height: 400px;
+}
+.div-2 {
+	width: 100%;
+	height: 400px;
+}
+
+#chart-wka, #chart-wks, 
+#chart-hra, #chart-hrs, 
+#chart-bus-l, #chart-bus-e {
+	width: 100%;
+	float: left;
+}
+#no-chart {
+	height: 0px;
+}
+
+@media (min-width: 766px) {
+#chart-wka, #chart-wks, 
+#chart-hra, #chart-hrs, 
+#chart-bus-l, #chart-bus-e {
+	width: 50%;
+}
+}

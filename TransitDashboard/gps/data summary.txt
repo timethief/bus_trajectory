@@ -1,0 +1,11 @@
+gps_cum
+STOP_SEQUENCE,CUM_TIME,CUM_DIST
+
+gps_data
+Time,Lattitude,Longitude
+
+gps_index
+ix,start_index,end_index
+
+trip_list
+Index,Bus ID,Run ID,Date,Data Count,Start Time,End Time,Duration

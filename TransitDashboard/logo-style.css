@@ -1,0 +1,28 @@
+.navbar-header #title-text {
+	opacity: 1;
+	transition: all 0.5s;
+}
+
+.navbar-header #logo-tooltip {
+	display: inline-block;
+	font-size: 16px; 
+	height: 50px; 
+	line-height: 20px; 
+	position: absolute; 
+	top: 0; 
+	left: 50px; 
+	opacity: 0;
+	margin-left: 50px;
+	visibility: hidden;
+	transition: all 0.5s;
+}
+
+.navbar-header #logo-btn:hover ~ #logo-tooltip {
+	visibility: visible;
+	margin-left: 0;
+	opacity: 1;
+}
+
+.navbar-header #logo-btn:hover ~ #title-text {
+	opacity: 0;
+}

@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+	<head>
+		<title>How On Time Are LA Buses?</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+		<link rel="stylesheet" href="logo-style.css">
+		<link rel="stylesheet" href="home/style.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="home/script.js"></script>
+		<!-- Embed Google Analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-94084189-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+		<meta charset="utf-8">
+	</head>
+	<body onload="getFiles('delay');">
+		<nav class="navbar navbar-default white" id="header">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a href="http://crosstowntraffic.uscannenbergmedia.com/" class="navbar-brand" style="z-index: 100; padding: 5px 10px;" id="logo-btn">
+	    				<img src="logo.png" style="height: 40px; margin: 0;">
+	    			</a>
+    				<a class="navbar-brand" id="logo-tooltip"><span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true" style="position: relative; top: 2px;"></span>Back to the article</a>
+					<a class="navbar-brand" id="title-text" href="./">How On Time Are LA Buses?</a>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+	                <li><a href="/TransitDashboard/other/">Late Lines</a></li>
+	                <li><a href="/TransitDashboard/temporal/">Compare Lines</a></li>
+	                <li><a href="/TransitDashboard/heatmap/">Heatmap</a></li>
+	                <li><a href="/TransitDashboard/stops/">Late Stops</a></li>
+	                <li><a href="/TransitDashboard/filter/">Filter Method</a></li>
+	            </ul>
+			</div>
+		</nav>
+		<div id="spacer"></div>
+		<div class="container title"><div class="title-child">
+			<h3>Welcome!</h3>
+        	<p id="exp">Click on the tabs above to explore the performance of LA Metro buses. <br> The data covers the period from <b>October 1, 2015</b> to <b>September 30, 2016</b>.</p>
+		</div></div>
+		<div class="container facts">
+            <div class="facts-child">
+                <p class="subtitle">Basic Information</p>
+                <table class="table">
+                    <tr>
+                        <td><b>Number of Bus Lines</b></td>
+                        <td class="td-right">136</td>
+                    </tr>
+                    <tr>
+                        <td><b>Number of Bus Stops</b></td>
+                        <td class="td-right">913</td>
+                    </tr>
+                    <tr>
+                        <td><b>Number of Data Points</b></td>
+                        <td class="td-right">16 Million</td>
+                    </tr>
+                    <tr>
+                        <td><b>Time Interval</b></td>
+                        <td class="td-right">5:00a.m.-11:59p.m.</td>
+                    </tr>
+                </table>
+	        </div>
+		</div>
+		<div class="container even" style="display: none">
+			<div class="div-2">
+				<div class="chart" id="chart-bus-l"></div>
+				<div class="chart" id="chart-bus-e"></div>
+			</div>
+		</div>
+		<div class="container even">
+			<div class="div-2">
+				<div class="chart" id="chart-wka"></div>
+				<div class="chart" id="chart-wks"></div>
+			</div>
+		</div>
+		<div class="container odd">
+			<div class="div-2">
+				<div class="chart" id="chart-hra"></div>
+				<div class="chart" id="chart-hrs"></div>
+			</div>
+		</div>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#spacer").height($("#header").height());
+				$('[rel="tooltip"]').tooltip();
+				$(window).on('resize', function(){
+					var headerH = $("#header").height();
+					$("#spacer").height(headerH);
+				});
+				$('#instruction').modal('show');
+			});
+		</script>
+	</body>
+</html>

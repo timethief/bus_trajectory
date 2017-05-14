@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.div-2 {
+	width: 50%;
+	float: left;
+	padding: 5px;
+	height: 520px;
+	overflow: auto;
+}
+#header, ol {
+    margin: 0; 
+    border-radius: 0;
+}
+.breadcrumb > li {
+	display: flex !important;
+	align-items: center;
+	justify-content: center;
+}
+.breadcrumb > li > p {
+	display: inline-block;
+	margin: 0;
+	margin-right: 5px;
+}
+ol > li {
+	display: block !important;
+	margin: 0 auto;
+}
+.pagination {
+	margin: 0;
+	cursor: pointer;
+}
+.glyphicon {
+	top: 0;
+}
+#trip_list {
+	display: block;
+	max-height: 60vh;
+	overflow: auto;
+}
+#trip_list tbody tr, #raw-data-btn, #analysis-btn {
+	cursor: pointer; 
+}
+.content-wrapper {
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.content {
+	padding: 20px;
+	width: 100%;
+	border: 1px solid #ddd;
+	border-top: none;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	height: 550px;
+}
+.analysis {
+	display: none;
+}
+.analysis #chart-cum {
+	display: block;
+	margin: 10px auto;
+}

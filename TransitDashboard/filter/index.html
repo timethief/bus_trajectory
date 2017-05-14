@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Filter Method - How On Time Are LA Buses?</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Alegreya:400,700" rel="stylesheet">
+		<link rel="stylesheet" href="../logo-style.css">
+		<link rel="stylesheet" href="style.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="https://code.highcharts.com/highcharts.js"></script>
+		<script src="https://code.highcharts.com/modules/data.js"></script>
+		<script src="script.js"></script>
+		<!-- Embed Google Analytics -->
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-94084189-1', 'auto');
+		  ga('send', 'pageview');
+
+		</script>
+		<meta charset="utf-8">
+	</head>
+	<body onload="getFiles();">
+		<nav class="navbar navbar-default" id="header">
+	        <div class="container-fluid">
+	            <div class="navbar-header">
+	            	<a href="http://crosstowntraffic.uscannenbergmedia.com/" class="navbar-brand" style="z-index: 100; padding: 5px 10px;" id="logo-btn">
+	    				<img src="../logo.png" style="height: 40px; margin: 0;">
+	    			</a>
+    				<a class="navbar-brand" id="logo-tooltip"><span class="glyphicon glyphicon glyphicon-menu-left" aria-hidden="true" style="position: relative; top: 2px; font-size: inherit !important"></span>Back to the article</a>
+	                <a class="navbar-brand" id="title-text" href="../">How On Time Are LA Buses?</a>
+	            </div>
+	            <ul class="nav navbar-nav navbar-right">
+	                <li><a href="../other/">Late Lines</a></li>
+	                <li><a href="../temporal/">Compare Lines</a></li>
+	                <li><a href="../heatmap/">Heatmap</a></li>
+	                <li><a href="../stops/">Late Stops</a></li>
+	                <li class="active"><a>Filter Method</a></li>
+	            </ul>
+	        </div>
+	    </nav>
+	    <div id="spacer"></div>
+	    <div class="container title-container">
+		    <div class="title">
+		    	<h1> 
+		    		How We Filtered Our Dataset
+		    	</h1>
+		    </div>
+		    <!-- <div class="row">
+		    	<div class="col-md-4">
+					<div class="thumbnail text-center">
+						<div class="caption">
+							<h2 id="text-0"></h2>
+							<h3>Original Dataset</h3>
+							<p>Number of Rows: 360 Million</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail text-center">
+						<div class="caption">
+							<a href="#step-1">
+								<h2 id="text-1"></h2>
+								<h3>Filtering Deviation</h3>
+								<p>Rows Left: 300 Million</p>
+							</a>	
+						</div>
+					</div>
+				</div>
+		    	<div class="col-md-4">
+					<div class="thumbnail text-center">
+						<div class="caption">
+							<a href="#step-2">
+								<h2 id="text-2"></h2>
+								<h3>Transforming Dataset</h3>
+								<p>Rows Left: 75 Million</p>
+							</a>	
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail text-center">
+						<div class="caption">
+							<a href="#step-3">
+								<h2 id="text-3"></h2>
+								<h3>Discarding Departure</h3>
+								<p>Rows Left: 60 Million</p>
+							</a>	
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail text-center">
+						<div class="caption">
+							<a href="#step-4">
+								<h2 id="text-4"></h2>
+								<h3>Setting Interval</h3>
+								<p>Rows Left: 16 Million</p>
+							</a>	
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="thumbnail text-center">
+						<div class="caption">
+							<h2 id="text-5"></h2>
+							<h3>Filtered Dataset</h3>
+							<p>Used to perform analysis</p>
+						</div>
+					</div>
+				</div>
+			</div> -->
+	    </div>
+	    <div class="anchor" id="step-1"></div>
+	    <div class="container odd">
+			<div class="description">
+				<h3>Step 1: Choosing the Time Period with Most Reliable Data</h3>
+				<p>In this research, we used data from GPS transmitters attached to Los Angeles Metro buses which record the time and location of each vehicle along its route. The information is compiled into Automatic Vehicle Location (AVL) datasets. We chose to examine the period from Oct. 1, 2015 to Sept. 30, 2016 because it included the most complete data reflecting possible seasonal variations in the public transportation system. </p>
+			</div>
+			<div class="chart" id="chart-occ"></div>
+		</div>
+		<div class="anchor" id="step-2"></div>
+	    <div class="container even">
+			<div class="description">
+				<h3>Step 2: Excluding Schedule Deviation Outliers</h3>
+				<p>Schedule deviation reported in AVL datasets included outliers due to variety of reasons, such as idle buses or inaccurate GPS readings. We filtered out schedule deviations that fell far beyond the norms. After excluding these outliers our final dataset contained schedule deviations of buses that arrived between 5 minutes early or 10 minutes late.</p>
+			</div>
+			<div class="chart" id="no-chart"></div>
+		</div>
+		<div class="anchor" id="step-3"></div>
+		<div class="container odd">
+			<div class="description">
+				<h3>Step 3: Excluding Data from Departure Stations</h3>
+				<p>The AVL data reported from the first stop of a route were unreliable because buses continued to report schedule deviation even while waiting to embark on their next trip. Therefore, we disregarded the data collected at the departure stations.</p>
+			</div>
+			<div class="chart" id="no-chart"></div>
+		</div>
+		<div class="anchor" id="step-4"></div>
+		<div class="container even">
+			<div class="description">
+				<h3>Step 4: Trajectory Normalization</h3>
+				<p>The AVL dataset included multiple instances in which a bus sent duplicate data from the same location, which skewed results. Therefore, we normalized the data so that we did not count the same data more than once. </p>
+			</div>
+			<div class="chart" id="chart-dat"></div>
+		</div>
+		<script>
+			function resizeFunc() {
+				var headerH = $("#header").height();
+				$("#spacer").height(headerH);
+				if($("body").width() >= 992) {
+					$("#text-0").html(glyphWithName('remove-circle'));
+					$("#text-1").html(glyphWithName('chevron-right'));
+					$("#text-2").html(glyphWithName('chevron-right'));
+					$("#text-3").html(glyphWithName('chevron-right'));
+					$("#text-4").html(glyphWithName('chevron-right'));
+					$("#text-5").html(glyphWithName('ok-circle'));
+				}
+				else {
+					$("#text-0").html(glyphWithName('remove-circle'));
+					$("#text-1").html(glyphWithName('chevron-down'));
+					$("#text-2").html(glyphWithName('chevron-down'));
+					$("#text-3").html(glyphWithName('chevron-down'));
+					$("#text-4").html(glyphWithName('chevron-down'));
+					$("#text-5").html(glyphWithName('ok-circle'));
+				}
+			}
+			function glyphWithName(str) {
+				return '<span class="glyphicon glyphicon-' + str + '" aria-hidden="true"></span>';
+			}
+			$(document).ready(function(){
+				resizeFunc();
+				$(window).on('resize', resizeFunc);
+			});
+		</script>
+	</body>
+</html>
